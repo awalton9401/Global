@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Us</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/helix.css">
+        
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A600%2C500%2C700%7CPoppins%3A400%7CPlayfair+Display+SC%3A700&amp;ver=1574809681" type="text/css" media="all">
+        
+        <style>
+            body {
+                font-family: Montserrat;
+            }
+            
+            h1 {
+                font-family: Playfair Display SC;
+                text-transform: uppercase;
+                font-size: 50px;
+                line-height: 50px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 69px;
+            }
+            
+            h2 {
+                font-family: Montserrat;
+                width: 100%;
+                border-bottom: 1px solid black;
+                text-align: center;
+            }
+            
+            .banner {
+                margin-bottom: 50px;
+                height: initial;
+            }
+            
+            .banner.image {
+                height: 500px;
+            }
+            
+            .block.text {
+                width: 60%;
+                margin: 0px auto 70px auto;
+                padding: 20px 30px;
+                position: relative;
+            }
+            
+            .block.text.border {
+                border: 2px solid red;
+            }
+            
+            .border {
+                border: 2px solid red;
+                position: absolute;
+                top: -10px;
+                left: 7px;
+            }
+        </style>
+        
+        <script src="js/jquery-3.4.0.js"></script>
+        <script src="js/jquery.helix.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
+                
+                $("#menu").helix({
+                    items: items,
+                    logo: "images/globallogo.png",
+                    selected: "About Us",
+                    horizontal: true,
+                    fixedHeight: 70,
+                    smallMenu: true,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "Services": function(){
+                            window.location = "services.html"
+                        },
+                        "Team": function () {
+                            window.location = "team.html";
+                        },
+                        "Contact Us": function () {
+                            window.location = "contact_us.html";
+                        }
+                    }
+                });
+                
+                $("#footerMenu").helix({
+                    items: items,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "Services": function(){
+                            window.location = "services.html"
+                        },
+                        "Team": function () {
+                            window.location = "team.html";
+                        },
+                        "Contact Us": function () {
+                            window.location = "contact_us.html";
+                        }
+                }
+                });
+                
+                $.each($(".block.text .border"), function(index, item){
+                    $(item).css({height: $(item).parent().height() + 60, width: $(item).parent().width() + 40});
+                });
+                
+                $("#facebook").click(() => window.location = "https://www.facebook.com/GlobalRealEstateEnterprise/");
+                $("#instagram").click(() => window.location = "https://www.instagram.com/globalrealestateenterprise/");
+                $("#twitter").click(() => window.location = "https://twitter.com/globalrealest14");
+                $("#linkedin").click(() => window.location = "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFE5V_GJcX_pwAAAW6KAvFYybjvdTUM5X-d45CX2Ftsd8bgwfEcJhY2N7TY-nSQETRIZRqTTZE3ylriK-RlJZvyCPgrBwsPRjCaTj7aTDkzACT3pRIEAzOZaYZvId4U6uBiDdM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-real-estate-enterprise");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="banner" id="header">
+            <div id="menu"></div>
+        </div>
+        <div id="skyline" class="image banner"></div>
+        <div class="banner">
+            <div class="text block border">
+                <div class="border"></div>
+                <h1>WHO WE ARE</h1>
+                <h2>CREATING COMMUNITIES</h2>
+                <p>Global Real Estate Enterprise invests in distressed properties that require rehabbing for retail or rental. Executing this goal is paramount to the economy, communities and its residents. Global Real Estate Enterprise is prepared to render safe, stable and affordable living communities to residents across the United States and globally.<br><br>Global Real Estate Enterprise develops cutting edge real estate for the rapidly growing need of quality housing. Our company is devoted to creating a serene atmosphere in which homeowners and tenants can enjoy all of the benefits of secure, elegant, and appealing properties. Global Real Estate Enterprise maintains competitive market rates for properties which will be renovated and sold, while working toward multiplying our number of rental properties to increase total revenue earned. Within the company, we strive to work as a unified, congenial organization focused on exemplifying our mission. This strategy is the key to our success and longevity.</p>
+            </div>
+            <div class="text block border">
+                <div class="border"></div>
+                <h2>SERVING OUR INVESTORS</h2>
+                <p>Global Real Estate Enterprise serves its investors and lenders by maximizing income and minimizing property expenses. Regardless of our current economic environment, real estate investors are aware that real estate has historically been a strong, sound investment vehicle and will continue to bring outstanding returns on their investments.<br><br>Global Real Estate Enterprise consistently addresses the needs of its investors. Our conservative investment approach, demographic investing, is built on the most fundamental, long-term economic trends and common-sense analysis. Our approach will allow investors to consistently capitalize on their investments.</p>
+            </div>
+            <div class="text block border">
+                <div class="border"></div>
+                <h2>EMPOWERING COMMUNITIES</h2>
+                <p>Global Real Estate Enterprise’s vision is to improve the overall quality of living in all neighborhoods and increase the value of real estate in its target markets.  Our company builds value by rehabilitating properties in significant need of repairs.<br><br>Global Real Estate Enterprise is continually growing by increasing the number of projects in its primary areas of business and by extending its geographic reach into additional residential real estate markets throughout the country.</p>
+            </div>
+            <div class="text block border">
+                <div class="border"></div>
+                <h2>COMMUNITY VISION</h2>
+                <p>The company strives to increase homeownership opportunities within the communities we are re-developing.  We envision the quality of living to amplify in all communities through our renovation projects.  We strive to provide an environment suitable for the needs of every community.  Our ultimate vision is to build strong economic and social infrastructures where ever family feels empowered.</p>
+            </div>
+            <div class="text block border">
+                <div class="border"></div>
+                <h2>COMPANY MISSION</h2>
+                <p>In order to fully recover from the current devastating economic conditions,  communities across the globe are in need of a “community facelift” which includes affordable housing for both renters and homeowners. Many neighborhoods are in deplorable condition.  Vacant residential homes, industrial buildings, and office spaces are a communities’ deep cry for revitalization.<br><br>Decent affordable housing is in short supply and many low-income families and individuals face housing hardship. Providing communities with safe and affordable housing has been slow and the prospects for the future are uncertain.<br><br>Global Real Estate Enterprise mission is to create market rate communities which seamlessly include affordable housing. True market driven, mixed-income communities with a blend of rental and owner-occupied dwellings are needed to replace some of our most devastated communities. This will create an environment conducive to a positive social and economic environment.</p>
+            </div>            
+        </div>
+        <div class="banner" id="footer">
+            <div id="arial" class="image banner">
+                <div class="image block"><img src="images/footer_logo.png"></div>
+                <div id="footerMenu"></div>
+                <div id="socialMedia">
+                    <div  id="facebook" class="fa fa-facebook clickable"></div>
+                    <div id="instagram" class="fa fa-instagram clickable"></div>
+                    <div id="twitter" class="fa fa-twitter clickable"></div>
+                    <div id="linkedin" class="fa fa-linkedin clickable"></div>
+                </div>
+            </div>
+            <div id="copyright">COPYRIGHT © 2019. GLOBAL REAL ESTATE ENTERPRISE. ALL RIGHTS RESERVED.</div>
+        </div>
+    </body>
+</html>

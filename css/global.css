@@ -1,0 +1,117 @@
+body {
+    margin: 0px;
+}
+
+.banner {
+    width: 100%;
+    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.fa{
+    position: relative;
+    left: 120px;
+    bottom: 42px;
+}
+
+.half {
+    width: 49.5% !important;
+    position: relative;
+    bottom: 20px;
+}
+            
+#arial {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/arial.png");
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px !important;
+}
+
+#arial .block.image img {
+    margin: 0px auto;
+}
+
+#copyright {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0px !important;
+    padding: 20px;
+}
+
+#footer {
+    background-color: black;
+    margin: 0px !important;
+}   
+
+#footer .block.image {
+    display: block;
+    width: 300px;
+    margin: 50px auto;
+}
+
+#footer .helix {
+    background-color: rgba(0,0,0,0);
+}
+
+#footerMenu {
+    margin: 100px auto 0px auto;
+    width: 35%;
+}
+
+#footerMenu .item {
+    color: white;
+    font-size: 14px;
+    width: 90px;
+    padding: 0px;
+}
+
+#header {
+    background-color: white;
+    border-top: 9px solid #f26b38;
+    height: 110px;
+    margin-bottom: 0px;
+    margin-top: 0px !important;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}
+
+#header.small {
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.22);
+    height: 90px;
+}
+
+#menu {
+    display: block;
+    margin: 0px auto;
+    width: 60%;
+}
+
+#socialMedia {
+    color: white;
+    font-size: 20px;
+    margin: 30px auto 0px auto;
+    width: 400px;
+}
+
+#socialMedia > div {
+    margin: 5px;
+    width: 20px;
+}            
+
+#skyline {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}

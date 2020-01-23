@@ -1,0 +1,107 @@
+.helix {
+    background-color: #fff;
+    font: 15pt arial, sans-serif;
+}
+
+.helix  .hidden {
+    display: none !important;
+}
+
+.helix .hamburger {
+    display: none;
+    height: initial !important;
+    margin-left: 5px;
+    user-select: none;
+}
+
+.helix.menu > div {
+    vertical-align: top;
+}
+
+.helix.menu > .item {
+    bottom: initial;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 14pt;
+    height: 50px;
+    padding-top: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+    width: 120px;
+}
+
+.helix.menu > .item.small {
+    height: 30px;
+}
+
+.helix.menu > .item:hover, .helix.menu > .item.selected {
+    color: #f26b38;
+    cursor: pointer;
+}
+
+.helix.menu  .logo {
+    display: inline-block;
+    max-height: 100px;
+}
+
+.helix.menu .logoContainer {
+    display: inline-block;
+}
+
+.helix.menu.fixed {
+    position: fixed !important;
+    top: 10px !important;
+    width: 100%;
+    z-index: 100 !important;
+    height: 88px;
+}
+
+.helix.menu.horizontal > .item {
+    display: inline-block;
+}
+
+.helix.menu.small .item {
+    margin-top: 30px;
+}
+
+.helix.menu.small .item, .helix.menu.small .logo {
+    height: 80px;
+    padding-top: 0px !important;
+}
+
+.helix.menu.vertical > div {
+    display: block;
+}
+
+@media screen and (max-width: 1020px) {
+    .helix.menu.fixed {
+        position: initial !important;
+    }
+
+    .helix .hamburger {
+        cursor: pointer;
+        display: block;
+        font-size: 60pt;
+    }
+
+    .helix.menu {
+        height: initial !important;
+    }	
+
+    .helix.menu  .item {
+        font-size: 35pt;
+        height: 80px;
+    }	
+
+    .helix.menu  > .item.smallMenu { 
+        display: none; 
+        font-size: 35pt;
+        height: 80px;
+        width: 100%;
+    }
+
+    .helix.menu > .item.hidden {
+        display: none !important;
+    }
+}

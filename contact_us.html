@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/helix.css">
+        
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A600%2C500%2C700%7CPoppins%3A400%7CPlayfair+Display+SC%3A700&amp;ver=1574809681" type="text/css" media="all">
+                
+        <style>
+            #contactUs {
+                display: block;
+                margin: 0px auto;
+                width: 60%;
+            }
+            
+            #contactUs h1 {
+                font-family: Playfair Display SC;
+                text-transform: uppercase;
+                font-size: 50px;
+                line-height: 50px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 24px;
+            }
+            
+            #contactUs .field {
+                color: #676767;
+                margin-bottom:  1.5em;
+            }
+            
+            #contactUs .field .label {
+                font-family: Poppins;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 28px;
+            }
+            
+            #contactUs .field .entry textarea, #contactUs .field .entry input {
+                background-color: rgba(0,0,0,0.04);
+                border: 2px solid rgba(0,0,0,0);
+                border-radius: 4px;
+                color: #555;
+                font-size: 14px;
+                line-height: 24px;
+                padding: 10px;
+                width: 100%;
+            }
+            
+             #contactUs .field .entry textarea:focus, #contactUs .field .entry input:focus {
+                border-color: #f15a2c;
+                box-shadow: 0px 0px 10px rgba(0,0,0,0.11);
+                outline: 0;
+             }
+            
+            #send {
+                border-radius: 10px 10px;
+                background-color: #f15a2c;
+                color: white;
+                font-family: Roboto;
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 80px;
+                padding: 15px 35px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        </style>
+        
+        <script src="js/jquery-3.4.0.js"></script>
+        <script src="js/jquery.helix.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
+                
+                $("#menu").helix({
+                    items: items,
+                    logo: "images/globallogo.png",
+                    selected: "Contact Us",
+                    horizontal: true,
+                    fixedHeight: 70,
+                    smallMenu: true,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "Services": function(){
+                            window.location = "services.html"
+                        },
+                        "Team": function () {
+                            window.location = "team.html";
+                        },
+                        "About Us": function(){
+                            window.location = "about_us.html"
+                        }
+                    }
+                });
+                
+                $("#footerMenu").helix({
+                    items: items,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "Services": function(){
+                            window.location = "services.html"
+                        },
+                        "Team": function () {
+                            window.location = "team.html";
+                        },
+                        "About Us": function(){
+                            window.location = "about_us.html"
+                        }
+                    }
+                });
+                
+                $.each($(".block.text .border"), function(index, item){
+                    $(item).css({height: $(item).parent().height() + 60, width: $(item).parent().width() + 40});
+                });
+                
+                $("#facebook").click(() => window.location = "https://www.facebook.com/GlobalRealEstateEnterprise/");
+                $("#instagram").click(() => window.location = "https://www.instagram.com/globalrealestateenterprise/");
+                $("#twitter").click(() => window.location = "https://twitter.com/globalrealest14");
+                $("#linkedin").click(() => window.location = "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFE5V_GJcX_pwAAAW6KAvFYybjvdTUM5X-d45CX2Ftsd8bgwfEcJhY2N7TY-nSQETRIZRqTTZE3ylriK-RlJZvyCPgrBwsPRjCaTj7aTDkzACT3pRIEAzOZaYZvId4U6uBiDdM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-real-estate-enterprise");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="banner" id="header">
+            <div id="menu"></div>
+        </div>
+        <div id="skyline" class="image banner"></div>        
+        <div id="contactUs" class="banner">
+            <h1>Contact Us</h1>
+            <div class="field">
+                <div class="label">Your Name (required)</div>
+                <div class="entry">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="field">
+                <div class="label">Your Email (required)</div>
+                <div class="entry">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="field">
+                <div class="label">Subject</div>
+                <div class="entry">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="field">
+                <div class="label">Your Message</div>
+                <div class="entry">
+                    <textarea rows="10"></textarea>
+                </div>
+            </div>
+            <div id="send" class="button clickable">Send</div>
+        </div>
+        <div class="banner" id="footer">
+            <div id="arial" class="image banner">
+                <div class="image block"><img src="images/footer_logo.png"></div>
+                <div id="footerMenu"></div>
+                <div id="socialMedia">
+                    <div  id="facebook" class="fa fa-facebook clickable"></div>
+                    <div id="instagram" class="fa fa-instagram clickable"></div>
+                    <div id="twitter" class="fa fa-twitter clickable"></div>
+                    <div id="linkedin" class="fa fa-linkedin clickable"></div>
+                </div>
+            </div>
+            <div id="copyright">COPYRIGHT © 2019. GLOBAL REAL ESTATE ENTERPRISE. ALL RIGHTS RESERVED.</div>
+        </div>
+    </body>
+</html>

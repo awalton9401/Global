@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Global Real Estate Enterprise</title>
+
+        <link rel="stylesheet" href="css/global.css" type="text/css">
+        <link rel="stylesheet" href="css/helix.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A600%2C500%2C700%7CPoppins%3A400%7CPlayfair+Display+SC%3A700&amp;ver=1574809681" type="text/css" media="all">    
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+        
+ 
+        <style>
+            
+            .about-img{
+                height: 502px;
+                width: 276px;
+            }
+            
+            .align-left.slide-in {
+                transform: translatex(-30%) scale(0.95);
+            }
+            
+            .align-right.slide-in {
+                transform: translatex(30%) scale(0.95);
+            }
+            .slide-in{
+                opacity: 0;
+                transition: all .5s;
+            }
+            
+            .slide-in.active {
+                opacity: 1;
+                transform: translatex(0%) scale(1);
+            }
+            
+            .block.image{
+                display: inline-block;
+                margin: 80px 0 0 30px;
+                vertical-align: top;
+            }
+
+            .banner > .banner {
+                margin-top: initial;
+            }            
+
+            .content.block{
+                margin-left: 60px;
+                margin-top: 80px;
+            }
+
+            .content.block h2 :after{
+                content: url(images/line.png);
+                position: relative;
+                bottom: 6px;
+                left: 70px;
+            }
+
+            .link{
+                font-size: 20px;
+                font-style: italic;
+                color: #f26b38;
+                text-decoration: none;
+            }
+
+            .content.block h2 em{
+                color: #f26b38;
+                font-size: 40px;
+            }
+
+            .content.block h1{
+                font-size: 60px;
+                margin: 0 0 0 5px;
+                font-family: playfair display sc;
+            }
+
+            .content.block p{
+                font-size: 20px;
+                width: 540px;
+                color: #676767;
+            }            
+
+            .double {
+                height: 800px;
+            }
+
+            .half.banner{
+                vertical-align: top;                
+            }
+
+            .half {
+                width: 32.5% !important;
+                position: relative;
+                bottom: 20px;
+                left: 325px;
+            }
+
+            .hero-text {
+                text-align: center;
+                position: absolute;
+                top: 400px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+
+            .hero-text h2{
+                opacity: 1; 
+                transform: translateY(30px);
+                font-size: 50px; 
+                font-style: italic;
+                font-family: Montserrat;
+            }
+
+            .hero-text ruby{
+                font-size: 100px; 
+                font-style: normal;
+            }
+
+            .hero-text p{
+                opacity: 1; 
+                transform: translateY(0px);
+                font-style: italic; 
+                color: #f26b38; 
+                font-size: 50px;
+            }
+
+            .fa{
+                position: relative;
+                left: 120px;
+                bottom: 42px;
+            }
+            
+            .text.block h1:before{            
+                content: url(images/white-line.png);
+                position: relative;
+                bottom: 15px;
+                right: 40px;
+            }
+
+            .text.block h1:after{            
+                content: url(images/white-line.png);
+                position: relative;
+                bottom: 15px;
+                left: 40px;
+            }
+            
+            #aboutUs{
+                height: 630px;
+                background-image: url(images/about-us-banner_02.png);
+                background-size: 1753px;
+                background-repeat: no-repeat;
+                background-position: right -53px;
+            }
+
+            #aboutUs a.link.line.left:before {
+                content: url(images/line.png);
+                left: -130px;
+                position: absolute;
+            }            
+
+            #communities {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("images/banner.png");
+                height: 800px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
+            #contactUs {
+                background-image: url("images/Global-Real-Estate-Enterprise-background-left.png");
+                background-repeat: no-repeat;
+                background-position: bottom;
+                background-size: 1683px;
+            }
+            
+            #contactUs p{
+                text-align: center;
+                font-family: poppins;
+                font-size: 25px;
+                font-style: italic;
+            }
+            
+            #contactUs > .half.banner.left {
+                padding-left: 70px;
+            }
+            
+            #contactUs p:nth-child(2),  #contactUs p:nth-child(4), #contactUs p:nth-child(5)  {
+                text-align: left;
+                font-family: poppins;
+                font-size: 16px;
+                font-style: normal;
+            }
+            
+            #contactUs > .half.banner.left p:nth-child(3) {
+                color:#f26b38;
+                font-family: poppins;
+                font-size: 40px;
+                font-style: normal;
+                margin-top: 0;
+                margin-bottom: 0;
+                text-align: left;
+            }
+            
+            #contactUs > .half.banner.left h2 {
+                font-size: 30px;
+                color: #f26b38;
+                font-family: playfair display sc;
+            }
+            
+            #contactUs > .half.banner.left h3 {
+                font-family: playfair display sc;
+                font-size: 30px;
+            }
+            
+            #contactUs h1{
+                text-align: center;
+                font-size: 50px;
+                font-family: playfair display sc;
+                margin-bottom: 35px;
+                margin-top: 0;
+            }
+            
+            #contactUs h1:before{
+                content: url("images/line.png");
+                position: relative;
+                bottom: 14px;
+                right: 25px;
+            }
+            
+             #contactUs h1:after{
+                content: url("images/line.png");
+                position: relative;
+                bottom: 14px;
+                left: 25px;
+            }
+            
+            #contactUs > .text.block > h2{
+                position: relative; 
+                bottom: 200px;
+                color: #ffffff;
+                text-align: center;
+                font-size: 30px;
+                width: 61%; 
+                margin: 0 auto;
+                font-family: playfair display sc;
+            }
+            
+            #contactUs > .text.block img{
+                width: 100%;
+                height: 300px;
+                position: relative;
+                bottom: 10px;
+            }
+            
+            #empowering a.link.line.left:before {
+                position: relative;
+                left: -135px;
+            }
+            
+            #empowering{
+                background-image: url("images/portfolio-background-bottom.png");
+                margin-top: 0px;
+                height: 1280px;
+            }
+            
+            #empowering > .text.block h1{
+                font-family: playfair display sc;
+                font-size: 50px;
+                text-align: center;
+                font-style: italic;
+            }
+
+            #empowering > .text.block h1:before{
+                content: url(images/line.png);
+            }
+
+            #empowering > .text.block h1:after{
+                content: url(images/line.png);
+            }
+
+            #empowering > .text.block p{
+                font-size: 16px;
+                font-family: poppins;
+                font-style: italic;
+                margin: 30px auto 90px auto;
+                color: #676767;
+                width: 1087px;
+                text-align: center;
+                font-weight: 700;
+            }
+            
+            #empowering > .content.block{
+                margin: 0px auto;
+                width: 65%;
+                vertical-align: top;
+            }
+            
+            #empowering > .content.block > .block {
+                display: inline-block;
+                height: 450px;
+                width: 600px;
+                margin: 0px;
+            }
+            
+            #empowering > .content.block > .text.block a{
+                font-weight: 700;
+            }
+            
+            #empowering > .content.block > .text.block{
+                background-color: #fff;
+                border: 1px solid #c5c5c5;         
+            }
+            
+            #empowering > .content.block > .text.block.right{
+                text-align: right;
+                float: none;
+            }
+            
+            #empowering > .content.block > .text.block h3{
+                font-size: 25px;
+                font-family: playfair display sc;
+                margin: 75px 0 30px -138px;
+            }
+            
+            #empowering > .content.block > #bottom.text.block h3{
+                margin: 75px 30px 30px 29px;
+            }
+            
+            #empowering > .content.block > .text.block p{
+                font-size: 16px;
+                font-family: poppins;
+                color: #000000;
+            }
+            
+            #empowering > .content.block > .block.image {
+                background-size: cover !important;
+            }
+            
+            #empowering > .content.block > .block.image:nth-child(1) {
+                background: url("images/1-6.png") no-repeat;
+                padding-bottom: 2px;
+            }
+            
+            #empowering > .content.block > .block.image:nth-child(2) {
+                background: url("images/5-2.png") no-repeat;
+                left: -5px;
+                position: relative;
+                padding-bottom: 2px;
+            }
+            
+            #empowering > .content.block > .text.block:nth-child(2) h3:before{
+                content: url("images/line.png");
+                position: relative;
+                right: 13px;
+                bottom: 6px;
+            }
+            
+            #empowering > .content.block > .block.text a.left {
+                margin-left: 30px;
+            }
+            
+            #empowering > .content.block > .block.text a.right {
+                margin-right: 30px;
+            }
+            
+            #empowering > .content.block > .block.text p {
+                margin: auto;
+            }
+            
+            #empowering > div:nth-child(2) > div.text.block {
+                position: relative;
+                left: -5px;
+            }
+            
+            #form input[type], textarea {
+                border-radius: 25px;
+                border-top-style: hidden;
+                border-left-style: hidden;
+                border: 1px solid #b7b7b7;
+                padding: 20px 25px 13px 25px;
+                margin-top: 30px;
+            }
+            
+            #form textarea{
+                padding-bottom: 100px !important;
+            }
+            
+            #form input[type="submit"] {
+                border-radius: 30px;
+                background-color: #f26b38;
+                color: #ffffff;
+                font-family: playfair display sc;
+                font-size: 20px;
+                padding: 8px !important;
+            }
+            
+            #form.half.banner {
+                display: inline-grid;
+            }
+
+            #portfolio.banner{
+                height: 1120px;
+                margin-top: 0px;
+                background-image: url(images/portfolio-background.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+            }            
+
+            #portfolio .content.block:hover .text.block a{
+                color: #fff !important;
+            }
+
+            #portfolio .content.block:hover .text.block p{
+                color: #fff !important;
+            }
+
+            #portfolio .content.block:hover .text.block h3{
+                color: #fff !important;                
+            }
+
+            #portfolio .content.block:hover h3:after{
+                content: url(images/white-line.png);
+            }
+
+            #portfolio .content.block{
+                width: 390px;
+                display: inline-block;
+            }
+
+            #portfolio .content.block:hover{
+                background-color: #f26b38;
+            }            
+
+            #portfolio .content.image img{
+                width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            #portfolio .content.block .text.block{
+                border: 1px solid #c5c5c5;
+                margin-top: -4px;
+                padding: 20px 30px 35px;
+            }
+
+            #portfolio .content.block a{
+                font-size: 20px;
+                font-family: playfair display sc;
+                text-decoration: none;
+                color: #333333;
+                font-weight: 600;
+            }
+
+            #portfolio .content.block h3{
+                font-size: 23px;
+                font-family: playfair display sc;                
+            }
+
+            #portfolio .content.block h3:after{
+                content: url(images/line.png);
+            }
+
+            #portfolio .content.block p{
+                width: 327px;
+                font-size: 16px;
+                font-family: poppins;
+                color:  #676767;
+            }
+
+            #portfolio .text.block {
+                font-family: playfair display sc;
+            }
+
+            #portfolio h1{
+                color: white;
+                font-size: 55px;
+                margin-top: 50px;
+            }
+
+            #portfolio p{
+                font-size: 25px;
+                color: white;
+                width: 1050px;
+                margin: 0 auto;
+                font-style: italic;
+                margin-bottom: 50px;
+            }
+
+            #socialMedia {
+                color: white;
+                font-size: 20px;
+                margin: 30px auto 0px auto;
+                width: 400px;
+            }
+
+            #socialMedia > div {
+                margin: 5px;
+                width: 20px;
+
+            </style>
+
+            <script src="js/jquery-3.4.0.js"></script>
+            <script src="js/jquery.helix.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    
+                    const sliderImages = document.querySelectorAll('img.slide-in');
+                    const sliderContent = document.querySelectorAll('#top.half.banner.slide-in');
+                    
+                    var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
+                    
+                    
+                    
+                    function debounce(func, wait=20, immediate = true) {
+                        var timeout;
+                        return function() {
+                            var context = this, args = arguments;
+                            var later = function() {
+                                timeout = null;
+                                if (!immediate) func.apply(context, args);
+                            };
+                            var callNow = immediate && !timeout;
+                            clearTimeout(timeout);
+                            timeout = setTimeout(later, wait);
+                            if (callNow) func.apply(context, args);
+                        };
+                    };
+                    
+                    function checkSlide(e){
+                        sliderImages.forEach(sliderImage => {
+                            //half way through image
+                            const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2 + 500;
+                            //bottom of image
+                            const imageBottom = sliderImage.offsetTop + sliderImage.height;
+                            const isHalfShown = slideInAt > sliderImage.offsetTop;
+                            const isNotScrolledPast = window.scrollY < imageBottom;
+                            if (isHalfShown && isNotScrolledPast) {
+                                sliderImage.classList.add('active');
+                            }
+                        });
+                    };
+                    
+                    function checkSlideContent(f){
+                        sliderContent.forEach(sliderContent =>{
+                            const slideContentInAt = (window.scrollY + window.innerHeight) - sliderContent.height / 2 + 500;
+                            console.log(slideContentInAt);
+                        });
+                    }
+                    
+                    
+                    window.addEventListener('scroll', debounce(checkSlide, 500));
+                    window.addEventListener('scroll', debounce(checkSlideContent, 500));
+
+                    $("#menu").helix({
+                        items: items,
+                        selected: "Home",
+                        logo: "images/globallogo.png",
+                        horizontal: true,
+                        fixedHeight: 70,
+                        smallMenu: true,
+                        handlers: {
+                            "About Us": function () {
+                                window.location = "about_us.html";
+                            },
+                            "Services": function () {
+                                window.location = "services.html";
+                            },
+                            "Team": function () {
+                                window.location = "team.html";
+                            },
+                            "Contact Us": function () {
+                                window.location = "contact_us.html";
+                            }
+                        }
+                    });
+
+                    $("#footerMenu").helix({
+                        items: items,
+                        handlers: {
+                            "About Us": function () {
+                                window.location = "about_us.html";
+                            },
+                            "Services": function () {
+                                window.location = "services.html";
+                            },
+                            "Team": function () {
+                                window.location = "team.html";
+                            },
+                            "Contact Us": function () {
+                                window.location = "contact_us.html";
+                            }
+                        }
+                    });
+
+                    $("#facebook").click(() => window.location = "https://www.facebook.com/GlobalRealEstateEnterprise/");
+                    $("#instagram").click(() => window.location = "https://www.instagram.com/globalrealestateenterprise/");
+                    $("#twitter").click(() => window.location = "https://twitter.com/globalrealest14");
+                    $("#linkedin").click(() => window.location = "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFE5V_GJcX_pwAAAW6KAvFYybjvdTUM5X-d45CX2Ftsd8bgwfEcJhY2N7TY-nSQETRIZRqTTZE3ylriK-RlJZvyCPgrBwsPRjCaTj7aTDkzACT3pRIEAzOZaYZvId4U6uBiDdM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-real-estate-enterprise");  
+                   
+                });
+                
+                     
+            </script>
+
+        </head>
+        <body>
+            <div class="banner" id="header">
+                <div id="menu"></div>
+            </div>       
+            <div class="double banner" id="communities">
+                <div class="hero-text">
+                    <h2>
+                        CREATING
+                        <br>
+                        <ruby>COMMUNITIES</ruby>
+                    </h2>
+                    <p>Global Real Estate Enterprise</p>   
+                </div>
+            </div>
+            <div id="aboutUs">        
+                <div class="half banner">
+                    <div  class="image block right">
+                        <img class="slide-in align-left" id="about2" src="images/about-02.png">
+                    </div>
+                    <div class="image block right">
+                        <img class="slide-in align-left" id="about1" src="images/about-01.png">
+                    </div>        
+                </div>
+                <div class="half banner">
+                    <div class="content block">
+                        <h2>
+                            <em>About Us</em>
+                        </h2>
+                        <h1>We Find Homes</h1>
+                        <p>
+                            <strong>
+                                <em>Global Real Estate Enterprise</em>
+                            </strong>
+                            invests in distressed properties that require rehabbing for retail or rental. Executing this goal is paramount to the economy, communities and its residents.
+                            <strong>
+                                <em>Global Real Estate Enterprise</em>
+                            </strong>
+                            is prepared to render safe, stable and affordable living communities to residents across the United States and globally.                    
+                        </p>
+                        <a class="link line left" href="">Learn More...</a>
+                    </div>        
+                </div>
+            </div>
+            <div id="portfolio" class="banner" >
+                <div class="text block">
+                    <h1>WHAT WE DO</h1>
+                    <p>Global Real Estate Enterprise offers expert, full service property management of single family homes, apartment communities, commercial spaces and homeowner associations.  We pride ourselves in combining extensive real estate and management experience with local knowledge and professional partnerships.</p>
+                </div>
+                <div class="content block">
+                    <div class="content image">
+                        <img src="images/imageblock1.png">
+                    </div>
+                    <div class="text block">
+                        <h3>Property Management</h3>
+                        <p>Global Real Estate Enterprise offers expert, full service property management of single family homes, apartment communities, commercial spaces and homeowner associations.</p>
+                    <a href="services.html#propertyManagment">READ MORE</a>
+                    </div>
+                </div>
+                <div class="content block">
+                    <div class="content image">
+                        <img src="images/imageblock2.png">
+                    </div>
+                    <div class="text block">
+                        <h3>Tax Appeal Services</h3>
+                        <p>Our team determines if a property appears to be fairly assessed or if our representation can assist in an appeal for an assessment reduction. All property owners, even if they are not clients,</p>
+                    <a href="services.html#taxServices">READ MORE</a>
+                    </div>
+                </div>
+                <div class="content block">
+                    <div class="content image">
+                        <img src="images/imageblock3.png">
+                    </div>
+                    <div class="text block">
+                        <h3>Investor Assistance</h3>
+                        <p>Our goal is to handle all the day-to-day tasks in your real estate investing firm, saving you money and freeing your time to focus on its highest & best uses such as conducting deals</p>
+                    <a href="services.html#investorAssistance">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="banner" id="empowering">
+                <div class="text block">
+                    <h1>EMPOWERING COMMUNITIES</h1>
+                    <p>Global Real Estate Enterprise LLC’s vision is to improve the overall quality of living in all neighborhoods and increase the value of real estate in its target markets. The company builds value by rehabilitating properties in significant need of repairs.</p>
+                </div>
+                <div class="content block">
+                    <div class="image block">
+                    </div>
+                    <div class="text block">
+                        <h3>OUR VISION</h3>
+                        <p>The company strives to increase homeownership opportunities within the communities we are re-developing.  We envision the quality of living to amplify in all communities through our renovation projects.  We strive to provide an environment suitable for the needs of every community.  Our ultimate vision is to build strong economic and social infrastructures where ever family feels empowered.</p>
+                    <a class="link left" href="">Learn More...</a>                
+                    </div>            
+                </div>
+                <div class="content block">
+                    <div class="text block right" id="bottom">
+                    <h3>OUR MISSION</h3>
+                    <p>In order to fully recover from the current devastating economic conditions, communities across the globe are in need of a “community facelift” which includes affordable housing for both renters and homeowners. Many neighborhoods are in deplorable condition. Vacant residential homes, industr++ial buildings, and office spaces are a communities’ deep cry for revitalization..</p>
+                    <a class="link right" href="">Learn More...</a>                
+                    </div>
+                     <div class="image block">
+                    </div>
+                </div>
+            </div>
+            <div class="banner" id="contactUs">
+                <div class="text block">
+                    <img src="images/Rectangle-13.png">
+                    <h2>“VACANT RESIDENTIAL HOMES, INDUSTRIAL BUILDINGS, AND OFFICE SPACES ARE A COMMUNITIES DEEP CRY FOR REVITALIZATION.”</h2>
+                </div>
+                <h1>Contact US</h1>
+                <p>Send us a Note</p>
+                <div class="half banner left">
+                    <h3>GET IN TOUCH</h3>
+                    <p>NEED HELP? CALL US</p>
+                    <p>312-600-7024.</p>
+                    <p>Mon-Fri: 8 a.m. – 5 p.m.</p>
+                    <p>globalrealestateenterprisellc@yahoo.com</p>
+                    <h2>NEWSLETTER</h2>
+                </div>
+                <div class="half banner" id="form">
+                    <input type="text" placeholder="Name:">
+                    <input type="text" placeholder="Email:">
+                    <input type="text" placeholder="Subject:">
+                    <textarea placeholder="Message:"></textarea>
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+            <div class="banner" id="footer">
+                <div id="arial" class="image banner">
+                    <div class="image block"><img src="images/footer_logo.png"></div>
+                    <div id="footerMenu"></div>
+                    <div id="socialMedia">
+                        <div  id="facebook" class="fa fa-facebook clickable"></div>
+                        <div id="instagram" class="fa fa-instagram clickable"></div>
+                        <div id="twitter" class="fa fa-twitter clickable"></div>
+                        <div id="linkedin" class="fa fa-linkedin clickable"></div>
+                    </div>
+                </div>
+                <div id="copyright">COPYRIGHT © 2019. GLOBAL REAL ESTATE ENTERPRISE. ALL RIGHTS RESERVED.</div>
+            </div>
+        </body>
+    </html>

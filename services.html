@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Services</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/helix.css">
+        
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A600%2C500%2C700%7CPoppins%3A400%7CPlayfair+Display+SC%3A700&amp;ver=1574809681" type="text/css" media="all">
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A600%2C500%2C700%7CPoppins%3A400%7CPlayfair+Display+SC%3A700&amp;ver=1574809681" type="text/css" media="all">
+           
+        <style>            
+            h1, h2 {
+                color: black;
+            }
+            
+            h1 {
+                font-family: Playfair Display SC;
+                text-transform: uppercase;
+                font-size: 50px;
+                line-height: 50px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 69px;
+            }
+            
+            h2 {
+                font-family: Montserrat;
+                width: 100%;
+                border-bottom: 1px solid black;
+                text-align: center;
+            }
+            
+            .banner {
+                margin-bottom: 50px;
+                height: initial;
+            }
+            
+            .banner.image {
+                height: 500px;
+            }
+            
+            .block.text {
+                color: #676767;
+                font-family: Poppins;
+                width: 60%;
+                margin: 0px auto 70px auto;
+                padding: 20px 30px;
+                position: relative;
+            }
+            
+            .block.text.border {
+                border: 2px solid red;
+            }
+            
+            .border {
+                border: 2px solid red;
+                position: absolute;
+                top: -10px;
+                left: 7px;
+            }
+            
+            .service {
+                display: none;
+            }
+            
+            .service.selected {
+                display: inline-block;
+            }
+            
+            #investorAssistance {
+                position: relative;
+                top: -120px;
+            }
+            
+            #services {
+                display: inline-block;
+                vertical-align: top;
+            }
+            
+            #services li {
+                list-style-type: disc;
+            }
+            
+            #sideMenu {
+                display: inline-block;
+                padding: 0px;
+                position: relative;
+            }
+            
+            #sideMenu .helix .item {
+                background-color: #f4f4f4;
+                color: #949494;
+                height: initial;
+                left: initial;
+                padding: 8px 15px;
+                text-align: left;
+                text-transform: none;
+                width: 240px;
+            }
+            
+            #sideMenu  .helix .item.selected, #sideMenu  .helix .item:hover {
+                background-color: #f15a2c !important;
+                color: white;
+            }
+        </style>
+        
+        <script src="js/jquery-3.4.0.js"></script>
+        <script src="js/jquery.helix.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
+                var sideItems = [{name: "Property evaluation and determining accurate rental rate", value: "service_0"}, {name: "Marketing", value: "service_1"}, {name: "Tenant Screening and Selection", value: "service_2"}, {name: "Tenant Move In", value: "service_3"}, {name: "Rent Collection", value: "service_4"}, {name: "Evictions", value: "service_5"}, {name: "Legal", value: "service_6"}, {name: "Inspections", value: "service_7"}, {name: "Financial", value: "service_8"}, {name: "Maintenance, Repairs and Remodeling", value: "service_9"}, {name: "Tenant Move Out", value: "service_10"}];
+                var service;
+                
+                function renderService()
+                {
+                    $(".service").removeClass("selected");
+                    $("#" + service).addClass("selected");
+                }
+                
+                $("#menu").helix({
+                    items: items,
+                    logo: "images/globallogo.png",
+                    selected: "Services",
+                    horizontal: true,
+                    fixedHeight: 70,
+                    smallMenu: true,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "About Us": function(){
+                            window.location = "about_us.html"
+                        },
+                        "Team": function () {
+                            window.location = "team.html";
+                        },
+                        "Contact Us": function () {
+                            window.location = "contact_us.html";
+                        }
+                }
+                });
+                
+                $("#sideMenu").helix({
+                    items: sideItems,
+                    selected: "Property evaluation and determining accurate rental rate",
+                    horizontal: false,
+                    handlers: {
+                        "Property evaluation and determining accurate rental rate": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Marketing": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Tenant Screening and Selection": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Tenant Move In": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Rent Collection": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Evictions": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Legal": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Inspections": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Financial": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                        
+                        "Maintenance, Repairs and Remodeling": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        },                     
+                        "Tenant Move Out": function(state){
+                            service = state.value.value;
+                            
+                            renderService();
+                        }
+                    }
+                });
+                
+                $("#footerMenu").helix({
+                    items: items,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "About Us": function(){
+                            window.location = "about_us.html"
+                        },
+                        "Team": function () {
+                            window.location = "team.html";
+                        },
+                        "Contact Us": function () {
+                            window.location = "contact_us.html";
+                        }
+                }
+                });
+                
+                $.each($(".block.text .border"), function(index, item){
+                    $(item).css({height: $(item).parent().height() + 60, width: $(item).parent().width() + 40});
+                });
+                
+                $("#facebook").click(() => window.location = "https://www.facebook.com/GlobalRealEstateEnterprise/");
+                $("#instagram").click(() => window.location = "https://www.instagram.com/globalrealestateenterprise/");
+                $("#twitter").click(() => window.location = "https://twitter.com/globalrealest14");
+                $("#linkedin").click(() => window.location = "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFE5V_GJcX_pwAAAW6KAvFYybjvdTUM5X-d45CX2Ftsd8bgwfEcJhY2N7TY-nSQETRIZRqTTZE3ylriK-RlJZvyCPgrBwsPRjCaTj7aTDkzACT3pRIEAzOZaYZvId4U6uBiDdM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-real-estate-enterprise");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="banner" id="header">
+            <div id="menu"></div>
+        </div>
+        <div id="skyline" class="image banner"></div>
+        <div class="banner">               
+            <div id="propertyManagment" class="text block">
+                <h1>SERVICES</h1>
+                <h2>PROPERTY MANAGEMENT</h2>
+                <p>Global Real Estate Enterprise offers expert, full service property management of single family homes, apartment communities, commercial spaces and homeowner associations.  We pride ourselves in combining extensive real estate and management experience with local knowledge and professional partnerships. We have been widely recognized as one of the foremost providers of excellent management services for both home owners and commercial property owners alike.<br><br>Our Professional Services Include:
+                </p>
+            </div>
+            <div class="text block border">                
+                <div class="border"></div>
+                <div id="sideMenu"></div>
+                <div id="services" class="text block">
+                    <div id="service_0" class="service selected">
+                        <ul>
+                            <li>Perform detailed documentation of the interior and exterior including photos.</li>
+                            <li>Offer recommendations on repairs and cosmetic improvements that maximize monthly rent while providing good ROI.</li>
+                            <li>Gather data on rental rates in the area and work with owners to determine the optimal rental rate. Rent research will vary, but should include looking at the recently rented comparables according to size and type.</li>
+                            <li>Discuss with owners the pros and cons of different policies such as accepting pets, allowing smoking etc.</li>
+                        </ul>
+                    </div>
+                    <div id="service_1" class="service">
+                        <ul>
+                            <li>Prepare home for rent.
+                                <ul>
+                                    <li>Clean home and optimize interior appeal.</li>
+                                    <li>Manicure landscaping to increase curb appeal.</li>
+                                </ul>
+                            </li>
+                            <li>Create ads tailored to the property and advertising medium. Some of the mediums commonly used are:
+                                <ul>
+                                    <li>Paid and free rental listing websites.</li>
+                                    <li>Print publications,</li>
+                                    <li>Signs</li>
+                                    <li>MLS</li>
+                                    <li>Fliers</li>
+                                </ul>
+                            </li>
+                            <li>Work with other realtors and leasing agents to find a tenant.</li>
+                            <li>Provide a 24-hour hot-line where prospective tenants can listen to detailed information about the property.</li>
+                            <li>Field calls from prospects for questions and viewings.</li>
+                            <li>Meet prospective tenants for showings throughout the week and weekend.</li>
+                            <li>Provide prospective tenants with rental applications that are legally compliant with fair housing laws.</li>
+                            <li>Collection applications with application fee.</li>
+                        </ul>
+                    </div>
+                    <div id="service_2" class="service">
+                        <ul>
+                            <li>Perform a background check to verify identity, income, credit history, rental history, etc.</li>
+                            <li>Grade tenant according to pre-defined tenant criteria.</li>
+                            <li>Inform tenants who were turned down.</li>
+                        </ul>
+                    </div>
+                    <div id="service_3" class="service">
+                        <ul>
+                            <li>Draw up leasing agreement.</li>
+                            <li>Confirm move in date with tenant.</li>
+                            <li>Review lease guidelines with tenant regarding things like rental payment terms and required property maintenance.</li>
+                            <li>Ensure all agreements have been properly executed.</li>
+                            <li>Perform detailed move in inspection with tenant and have tenants sign a report verifying the condition of the property prior to move-in.</li>
+                            <li>Collect first months rent and security deposit.</li>
+                        </ul>
+                    </div>
+                    <div id="service_4" class="service">
+                        <ul>
+                            <li>Receiving rent.</li>
+                            <li>Hunting down late payments.</li>
+                            <li>Sending out pay or quit notices.</li>
+                            <li>Enforcing late fees.</li>
+                        </ul>
+                    </div>
+                    <div id="service_5" class="service">
+                        <ul>
+                            <li>Filing relevant paperwork to initiate and complete an unlawful detainer action.</li>
+                            <li>Representing owner in court.</li>
+                            <li>Coordinating with law enforcement to remove tenant and tenant’s possessions from unit.</li>
+                        </ul>
+                    </div>
+                    <div id="service_6" class="service">
+                        <ul>
+                            <li>Advise in the event of a legal dispute or litigation.</li>
+                            <li>Refer owner to a qualified attorney when necessary.</li>
+                            <li>Understand and abide by the latest local, state and federal legislation that apply to renting and maintaining rental properties..</li>
+                        </ul>
+                    </div>
+                    <div id="service_7" class="service">
+                        <ul>
+                            <li>Perform periodic inspections (Inside and outside) on a predefined schedule looking for repair needs, safety hazards, code violations, lease violations, etc.</li>
+                            <li>Send owner periodic reports on the condition of the property.</li>
+                        </ul>
+                    </div>
+                    <div id="service_8" class="service">
+                        <ul>
+                            <li>Provide accounting property management services.</li>
+                            <li>Make payments on behalf of owner (Mortgage, insurance, HOA dues, etc.).</li>
+                            <li>Detailed documentation of expenses via invoices and receipts.</li>
+                            <li>Maintain all historical records (paid invoices, leases, inspection reports, warranties, etc.).</li>
+                            <li>Provide easy to read monthly cash-flow statements which offer a detailed breakdown of income and itemized expenses.</li>
+                        </ul>
+                    </div>
+                    <div id="service_9" class="service">
+                        <ul>
+                            <li>Provide and oversee an in-house maintenance crew.</li>
+                            <li>Establish a preventative maintenance policy to identify and deal with repair needs.</li>
+                            <li>Provide a network of licensed, bonded and fully insured contractors who have been vetted for good pricing and good work that is up to code.</li>
+                            <li>Assign jobs to different parties (in-house employees, handyman and professional contractors) based on who will do the best job for the best price.</li>
+                            <li>Maintain outdoor areas.<ul>
+                                    <li>Leaf and snow removal.</li>
+                                    <li>Landscaping.</li>
+                                    <li>Removing trash and debris.</li>
+                                </ul></li>
+                            <li>Maintain and monitor a 24 hour emergency repair hot-line.</li>
+                            <li>Larger renovation or rehab projects.<ul>
+                                    <li>Provide recommendations on how the project can maximize rental income.</li>
+                                    <li>Prepare preliminary cost estimates.</li>
+                                    <li>Get multiple independent bids for the work.</li>
+                                    <li>Act as general contractor overseeing the work.</li>
+                                </ul></li>
+                        </ul>
+                    </div>
+                    <div id="service_10" class="service">
+                        <ul>
+                            <li>Inspect unit and fill out a report on the property’s condition when the client moves out.</li>
+                            <li>Provide tenant with a copy as well as estimated damages.</li>
+                            <li>Return the balance of the security deposit to the tenant.</li>
+                            <li>Forward any portion of the owner’s portion of the tenant deposit to the owner or hold in owner reserves for repairs.</li>
+                            <li>Clean unit and perform and needed repairs or upgrades.</li>
+                            <li>Re-key the locks.</li>
+                            <li>Put the property back on the market for rent.</li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            <div id="investorAssistance"></div>
+            <div class="text block border">                
+                <div class="border"></div>
+                <h2>REAL ESTATE INVESTOR ASSISTANCE</h2>
+                <p>Our goal is to handle all the day-to-day tasks in your real estate investing firm, saving you money and freeing your time to focus on its highest & best uses such as conducting deals and raising money.</p>
+                <h3>Our services include:</h3>
+                <ul>
+                    <li>Property lead list building (Probates, FSBOs, Foreclosures, Multi-family, Commercial, etc.).</li>
+                    <li>Investor & banker list building (REIs, high net-worth individuals, small banks, private lenders).</li>
+                    <li>Property research & comps reports.</li>
+                    <li>Lead followup, appointment setting, and calendar management.</li>
+                    <li id="taxServices">CRM software administration & support.</li>
+                    <li>Website & social media updates.</li>
+                    <li>Data entry & basic admin assistant tasks.</li>
+                </ul>
+            </div>
+            <div class="text block border">
+                <div class="border"></div>
+                <h2>TAX APPEAL SERVICES</h2>
+                <p>Our team determines if a property appears to be fairly assessed or if our representation can assist in an appeal for an assessment reduction. All property owners, even if they are not clients, are invited to attend a free Property Tax Information Session. These tax talks inform participants about the assessment and appeals system so they are better prepared to hold a property tax consultant or professional accountable, or appeal on a DIY basis. We gather evidence that supports the case for an assessment reduction, investigating comparable residential properties and by delving into issues of condition, valuation, income, occupancy and relevant market forces for both residential and commercial cases.<br><br>Our team can guide you through the tax appeal process, which can include an appeal of your property assessment based on Lack of Uniformity, Overvaluation, Property Description Errors and/or changes to your property’s condition. These appeals can be made with County Assessors, Boards of Review and at the Property Tax Appeal Board.</p>
+                <h3>Our services include:</h3>
+                <ul>
+                    <li>Conducting Free Evaluations of your property tax assessment.</li>
+                    <li>Gathering documentation and evidence to help support successful appeals.</li>
+                    <li>Verifying accuracy of public records descriptions, classifications, exemptions.</li>
+                    <li>Filing appeals for Tax Relief representing you at county and statewide agencies.</li>
+                    <li>Applying for refunds from prior years correcting assessment, exemption, and other errors.</li>
+                    <li>Discovering & recovering assets including duplicate and inadvertent payments.</li>
+                    <li>Monitoring property tax / Assessment watching for long-term tax relief opportunities.</li>
+                </ul>
+            </div>
+        </div>        
+        <div class="banner" id="footer">
+            <div id="arial" class="image banner">
+                <div class="image block"><img src="images/footer_logo.png"></div>
+                <div id="footerMenu"></div>
+                <div id="socialMedia">
+                    <div  id="facebook" class="fa fa-facebook clickable"></div>
+                    <div id="instagram" class="fa fa-instagram clickable"></div>
+                    <div id="twitter" class="fa fa-twitter clickable"></div>
+                    <div id="linkedin" class="fa fa-linkedin clickable"></div>
+                </div>
+            </div>
+            <div id="copyright">COPYRIGHT © 2019. GLOBAL REAL ESTATE ENTERPRISE. ALL RIGHTS RESERVED.</div>
+        </div>
+    </body>
+</html>

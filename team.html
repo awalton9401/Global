@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team</title>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/helix.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        
+        <link rel="stylesheet" id="redux-google-fonts-salient_redux-css" href="https://fonts.googleapis.com/css?family=Montserrat%3A600%2C500%2C700%7CPoppins%3A400%7CPlayfair+Display+SC%3A700&amp;ver=1574809681" type="text/css" media="all">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+        
+        <style>
+            h1 {
+                font-family: Playfair Display SC;
+                font-size: 50px;
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: 50px;
+            }
+            
+            h2 {
+                font-family: Montserrat;
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 25px;
+                margin-bottom: 7px;
+                text-transform: uppercase;
+            }
+            
+            .banner:nth-child(3) {
+                text-align: center;
+            }
+            
+            .border {
+                border: 2px solid red;
+                left: 7px;
+                position: absolute;
+                top: -10px;
+            }
+            
+            #team {
+                margin: 0px auto 40px auto;
+                width: 60%;
+            }
+            
+            #team p {
+                color: #676767;
+                line-height: 28px;
+                margin-top: 0px;
+            }
+            
+            #team p em {
+                font-weight: 600;
+                font-style: italic;
+            }
+        </style>
+        
+        <script src="js/jquery-3.4.0.js"></script>
+        <script src="js/jquery.helix.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
+                
+                $("#menu").helix({
+                    items: items,
+                    nav: true,
+                    logo: "images/globallogo.png",
+                    selected: "Team",
+                    horizontal: true,
+                    fixedHeight: 70,
+                    smallMenu: true,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "About Us": function(){
+                            window.location = "about_us.html"
+                        },
+                        "Services": function(){
+                            window.location = "services.html"
+                        },
+                        "Contact Us": function () {
+                            window.location = "contact_us.html";
+                        }
+                }
+                });
+                
+                $("#footerMenu").helix({
+                    items: items,
+                    handlers: {
+                        "Home": function(){
+                            window.location = "index.html"
+                        },
+                        "About Us": function(){
+                            window.location = "about_us.html"
+                        },
+                        "Services": function(){
+                            window.location = "services.html"
+                        },
+                        "Contact Us": function () {
+                            window.location = "contact_us.html";
+                        }
+                    }
+                });
+                
+                $("#team").owlCarousel({
+                    autoplay:true,
+                    autoplayTimeout:5000,
+                    autoplayHoverPause:true,
+                    dots: true,
+                    loop:true,
+                    responsive:{                        
+                        600:{
+                            items: 1
+                        }
+                    }
+                });
+                
+                $.each($(".block.text .border"), function(index, item){
+                    $(item).css({height: $(item).parent().height() + 60, width: $(item).parent().width() + 40});
+                });
+                
+                $("#facebook").click(() => window.location = "https://www.facebook.com/GlobalRealEstateEnterprise/");
+                $("#instagram").click(() => window.location = "https://www.instagram.com/globalrealestateenterprise/");
+                $("#twitter").click(() => window.location = "https://twitter.com/globalrealest14");
+                $("#linkedin").click(() => window.location = "https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFE5V_GJcX_pwAAAW6KAvFYybjvdTUM5X-d45CX2Ftsd8bgwfEcJhY2N7TY-nSQETRIZRqTTZE3ylriK-RlJZvyCPgrBwsPRjCaTj7aTDkzACT3pRIEAzOZaYZvId4U6uBiDdM=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-real-estate-enterprise");
+            });
+        </script>
+    </head>
+    <body>
+        <div class="banner" id="header">
+            <div id="menu"></div>
+        </div>
+        <div id="skyline" class="image banner"></div>
+        <div class="banner">
+            <h1>OUR TEAM</h1>
+            <div id="team" class="owl-carousel owl-theme">
+                <div>
+                    <h2>LaMar Gardner</h2>
+                    <p><em>Real Estate Consultant, Marketing and Advertisement Expert</em></p>
+                    <p>LaMar Gardner is a deeply accomplished and result-driven Marketing and Advertisement Executive with a consistent documented record of developing new, profitable revenue streams and opening many avenues for success. He initiates a wide array of marketing and advertisement campaigns through social media and brand awareness. He is motivated by internal standards of excellence to overachieve expectations and exceed company goals. LaMar is highly successful at driving high-value revenue and profit gains.</p>
+                </div>
+                <div>
+                    <h2>Dr. Dwight Bailey</h2>
+                    <p><em>Real Estate Consultant, Eco-Friendly Coordinator, Energy Efficiency Program Expert</em></p>
+                    <p>Dr. Dwight Bailey is a real estate veteran who is dynamic, energetic, and highly experienced in residential property management with solid history of success, including oversight of our Chicagoland area properties. He is a steadfast leader, mentor, and coordinator with a track record of steering improvement projects, building and guiding top-performing teams, and optimizing internal operations. His commitment to producing top performing strategies has been paramount to our longevity and success.</p>
+                </div>
+                <div>
+                    <h2>John Thomas</h2>
+                    <p><em>Property Manager, Real Estate Investor</em></p>
+                    <p>John Thomas is a real estate veteran who is dynamic, energetic, and highly experienced in residential property management with solid history of success, including oversight of our Chicagoland area properties. He is a steadfast leader, mentor, and coordinator with a track record of steering improvement projects, building and guiding top-performing teams, and optimizing internal operations. His commitment to producing top performing strategies has been paramount to our longevity and success.</p>
+                </div>
+            </div>
+        </div>
+        <div class="banner" id="footer">
+            <div id="arial" class="image banner">
+                <div class="image block"><img src="images/footer_logo.png"></div>
+                <div id="footerMenu"></div>
+                <div id="socialMedia">
+                    <div  id="facebook" class="fa fa-facebook clickable"></div>
+                    <div id="instagram" class="fa fa-instagram clickable"></div>
+                    <div id="twitter" class="fa fa-twitter clickable"></div>
+                    <div id="linkedin" class="fa fa-linkedin clickable"></div>
+                </div>
+            </div>
+            <div id="copyright">COPYRIGHT © 2019. GLOBAL REAL ESTATE ENTERPRISE. ALL RIGHTS RESERVED.</div>
+        </div>
+    </body>
+</html>
