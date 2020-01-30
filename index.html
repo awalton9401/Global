@@ -31,14 +31,29 @@
             .align-right.slide-in {
                 transform: translatex(30%) scale(0.95);
             }
-            .slide-in{
+            
+            .align-bottom.slide-up {
+                transform: translateY(30%) scale(0.95);
+            }
+            
+            .slide-in {
                 opacity: 0;
                 transition: all .5s;
+            }
+            
+            .slide-up {
+                opacity: 0;
+                transition:  all .5s;
             }
             
             .slide-in.active {
                 opacity: 1;
                 transform: translatex(0%) scale(1);
+            }           
+           
+            .slide-up.active {
+                opacity: 1;
+                transform: translateY(0%) scale(1);
             }
             
             .block.image{
@@ -162,7 +177,7 @@
 
             #aboutUs a.link.line.left:before {
                 content: url(images/line.png);
-                left: -130px;
+                left: -195px;
                 position: absolute;
             }            
 
@@ -515,8 +530,11 @@
             <script>
                 $(document).ready(function () {
                     
-                    const sliderImages = document.querySelectorAll('img.slide-in');
-                    const sliderContent = document.querySelectorAll('#top.half.banner.slide-in');
+                    const sliderImages = document.querySelectorAll('.image.block.right');
+                    const sliderContents = document.querySelectorAll('.content.block.slide-in');
+                    const sliderContentsUp = document.querySelectorAll('.text.block.slide-up') 
+                    
+        
                     
                     var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
                     
@@ -537,30 +555,50 @@
                         };
                     };
                     
-                    function checkSlide(e){
+                    function checkSlide(e){                        
                         sliderImages.forEach(sliderImage => {
                             //half way through image
-                            const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2 + 500;
-                            //bottom of image
-                            const imageBottom = sliderImage.offsetTop + sliderImage.height;
-                            const isHalfShown = slideInAt > sliderImage.offsetTop;
-                            const isNotScrolledPast = window.scrollY < imageBottom;
-                            if (isHalfShown && isNotScrolledPast) {
+                            const slideInAt = (sliderImage.getBoundingClientRect().height / 2);
+                            const isHalfShown = slideInAt < sliderImage.getBoundingClientRect().top;
+                            if ( isHalfShown){
                                 sliderImage.classList.add('active');
                             }
+                          
                         });
                     };
                     
                     function checkSlideContent(f){
-                        sliderContent.forEach(sliderContent =>{
-                            const slideContentInAt = (window.scrollY + window.innerHeight) - sliderContent.height / 2 + 500;
-                            console.log(slideContentInAt);
+                        sliderContents.forEach(sliderContent =>{
+                            const slideInAt = (window.scrollY + window.innerHeight) - sliderContent.offsetHeight / 2;
+                            //bottom of image
+                            const slideContentBottom = sliderContent.offsetTop + sliderContent.offsetHeight;
+                            const isHalfShown = slideInAt > sliderContent.offsetTop;
+                            const isNotScrolledPast = window.scrollY < slideContentBottom;
+                            if (isHalfShown && isNotScrolledPast) {
+                                sliderContent.classList.add('active');
+                            }
                         });
+                    }
+                    
+                    function checkSlideContentUp(g){
+                        sliderContentsUp.forEach(sliderContentUp =>{
+                           const slideUpAt = sliderContentUp.getBoundingClientRect();
+                           const isHalfShown = slideUpAt < window.ScrollY;
+                           if (isHalfShown) {
+                               sliderContentUp.classList.add('active');
+                           }
+                           
+                           
+console.log(window.scrollY);
+console.log(slideUpAt);
+
+                        });                        
                     }
                     
                     
                     window.addEventListener('scroll', debounce(checkSlide, 500));
                     window.addEventListener('scroll', debounce(checkSlideContent, 500));
+                    window.addEventListener('scroll', debounce(checkSlideContentUp, 500));
 
                     $("#menu").helix({
                         items: items,
@@ -630,15 +668,15 @@
             </div>
             <div id="aboutUs">        
                 <div class="half banner">
-                    <div  class="image block right">
-                        <img class="slide-in align-left" id="about2" src="images/about-02.png">
+                    <div  class="image block right slide-in align-left">
+                        <img src="images/about-02.png">
                     </div>
-                    <div class="image block right">
-                        <img class="slide-in align-left" id="about1" src="images/about-01.png">
+                    <div class="image block right slide-in align-left">
+                        <img src="images/about-01.png">
                     </div>        
                 </div>
                 <div class="half banner">
-                    <div class="content block">
+                    <div class="content block slide-in align-right">
                         <h2>
                             <em>About Us</em>
                         </h2>
@@ -658,7 +696,7 @@
                 </div>
             </div>
             <div id="portfolio" class="banner" >
-                <div class="text block">
+                <div class="text block align-bottom slide-up">
                     <h1>WHAT WE DO</h1>
                     <p>Global Real Estate Enterprise offers expert, full service property management of single family homes, apartment communities, commercial spaces and homeowner associations.  We pride ourselves in combining extensive real estate and management experience with local knowledge and professional partnerships.</p>
                 </div>
