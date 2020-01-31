@@ -521,84 +521,28 @@
             #socialMedia > div {
                 margin: 5px;
                 width: 20px;
-
+            }
             </style>
 
             <script src="js/jquery-3.4.0.js"></script>
             <script src="js/jquery.helix.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/is-in-viewport/3.0.4/isInViewport.min.js"></script>
 
             <script>
                 $(document).ready(function () {
-                    
-                    const sliderImages = document.querySelectorAll('.image.block.right');
-                    const sliderContents = document.querySelectorAll('.content.block.slide-in');
-                    const sliderContentsUp = document.querySelectorAll('.text.block.slide-up') 
-                    
-        
-                    
                     var items = [{name: "Home"}, {name: "About Us"}, {name: "Services"}, {name: "Projects"}, {name: "Team"}, {name: "Blog"}, {name: "Contact Us"}];
-                    
-                    
-                    
-                    function debounce(func, wait=20, immediate = true) {
-                        var timeout;
-                        return function() {
-                            var context = this, args = arguments;
-                            var later = function() {
-                                timeout = null;
-                                if (!immediate) func.apply(context, args);
-                            };
-                            var callNow = immediate && !timeout;
-                            clearTimeout(timeout);
-                            timeout = setTimeout(later, wait);
-                            if (callNow) func.apply(context, args);
-                        };
-                    };
-                    
-                    function checkSlide(e){                        
-                        sliderImages.forEach(sliderImage => {
-                            //half way through image
-                            const slideInAt = (sliderImage.getBoundingClientRect().height / 2);
-                            const isHalfShown = slideInAt < sliderImage.getBoundingClientRect().top;
-                            if ( isHalfShown){
-                                sliderImage.classList.add('active');
-                            }
-                          
-                        });
-                    };
-                    
-                    function checkSlideContent(f){
-                        sliderContents.forEach(sliderContent =>{
-                            const slideInAt = (window.scrollY + window.innerHeight) - sliderContent.offsetHeight / 2;
-                            //bottom of image
-                            const slideContentBottom = sliderContent.offsetTop + sliderContent.offsetHeight;
-                            const isHalfShown = slideInAt > sliderContent.offsetTop;
-                            const isNotScrolledPast = window.scrollY < slideContentBottom;
-                            if (isHalfShown && isNotScrolledPast) {
-                                sliderContent.classList.add('active');
-                            }
-                        });
-                    }
-                    
-                    function checkSlideContentUp(g){
-                        sliderContentsUp.forEach(sliderContentUp =>{
-                           const slideUpAt = sliderContentUp.getBoundingClientRect();
-                           const isHalfShown = slideUpAt < window.ScrollY;
-                           if (isHalfShown) {
-                               sliderContentUp.classList.add('active');
-                           }
-                           
-                           
-console.log(window.scrollY);
-console.log(slideUpAt);
-
-                        });                        
-                    }
-                    
-                    
-                    window.addEventListener('scroll', debounce(checkSlide, 500));
-                    window.addEventListener('scroll', debounce(checkSlideContent, 500));
-                    window.addEventListener('scroll', debounce(checkSlideContentUp, 500));
+                    const ACTIVATE_IN_VIEWPORT_SELECTORS = [
+                        ".slide-up", 
+                        ".content.block.slide-in", 
+                        ".image.block.right",
+                        //@recommendation from chris -> universal .active-in-viewport for all your animatable divs that use this functionality
+                    ];
+                    setInterval(() => {
+                        const finalSelector = ACTIVATE_IN_VIEWPORT_SELECTORS
+                            .map(selector => selector.trim().concat(":in-viewport"))
+                            .join(", ");
+                        $(finalSelector).addClass("active");
+                     }, 100);
 
                     $("#menu").helix({
                         items: items,
@@ -668,7 +612,7 @@ console.log(slideUpAt);
             </div>
             <div id="aboutUs">        
                 <div class="half banner">
-                    <div  class="image block right slide-in align-left">
+                    <div class="image block right slide-in align-left">
                         <img src="images/about-02.png">
                     </div>
                     <div class="image block right slide-in align-left">
